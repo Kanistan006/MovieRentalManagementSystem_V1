@@ -62,6 +62,29 @@ namespace MovieRentalManagementSystem_V1
         }
 
 
+        public string ValidateMovieRentalPrice(string price)
+        {
+            if (Convert.ToDecimal(price)> 0)
+            {
+                return price;
+
+            }
+            else
+            {
+                while (Convert.ToDecimal(price) <= 0)
+                {
+                    Console.WriteLine("Enter poitive Value");
+                    Console.Write("ReenterValue :  ");
+
+                    price = Console.ReadLine();
+
+
+                }
+                return price;
+            }
+        }
+
+
 
     }
 }

@@ -41,7 +41,7 @@ namespace MovieRentalManagementSystem_V1
                         Console.Write("Enter rentalprice: ");
                         string rentalprice = Console.ReadLine();
 
-                        //decimal ValidateMovieRentalPrice = movieManager.ValidateMovieRentalPrice(rentalprice);
+                        string ValidateMovieRentalPrice = movieManager.ValidateMovieRentalPrice(rentalprice);
 
                         movieManager.CreateMovie(new Movie(id, title, director, rentalprice));
 
