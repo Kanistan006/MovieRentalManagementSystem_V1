@@ -28,18 +28,18 @@ namespace MovieRentalManagementSystem_V1
 
         public void UpdateMovie(string movieId, string newtitle, string newdirector, string newrentalPrice)
         {
-            if (movieId != null)
+            var update = movies.Find(x => x.movieId == movieId);
+            if (update != null)
             {
-                var updateid = movies.Find(x => x.movieId == movieId);
 
-                var obj = new Movie
-                {
-                    title = newtitle,
-                    director= newdirector,
-                    rentalPrice = newrentalPrice
-                };
 
-                movies.Add(obj);
+
+                update.title = newtitle;
+                update.director = newdirector;
+                update.rentalPrice = newrentalPrice;
+
+                Console.WriteLine("updated");
+
 
             }
             else
@@ -50,11 +50,18 @@ namespace MovieRentalManagementSystem_V1
 
         }
 
-        public void DeleteMovie(string id)
+
+
+       
+
+            public void DeleteMovie(string id)
         {
             movies.RemoveAll(x => x.movieId == id);
             Console.WriteLine("deleted");
 
         }
+
+
+
     }
 }
