@@ -23,5 +23,10 @@ namespace MovieRentalManagementSystem_V1
         {
             return $" filesize : {FileSize},  format : {Format}";
         }
+
+        public override string DisplayMovieInfo()
+        {
+            return $"{base.DisplayMovieInfo()} DiscWeight : {FileSize},  Duration : {Format}";
+        }
     }
 }

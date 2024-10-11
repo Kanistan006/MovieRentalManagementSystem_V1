@@ -24,5 +24,12 @@ namespace MovieRentalManagementSystem_V1
         {
             return $" DiscWeight : {DiscWeight},  Duration : {Duration}";
         }
+
+
+        public override string DisplayMovieInfo()
+        {
+            return $"{base.DisplayMovieInfo()} DiscWeight : {DiscWeight},  Duration : {Duration}";
+        }
+
     }
 }

@@ -14,6 +14,8 @@ namespace MovieRentalManagementSystem_V1
         public string director { get; set; }
         public string rentalPrice { get; set; }
 
+        public int TotalMovies { get; set; }
+
         
 
 
@@ -23,6 +25,7 @@ namespace MovieRentalManagementSystem_V1
             this.title = title;
             this.director = director;
             this.rentalPrice = rentalPrice;
+            TotalMovies++;
         }
 
         public Movie()
@@ -35,6 +38,12 @@ namespace MovieRentalManagementSystem_V1
         public override string ToString()
         {
             return $"movieIdId: {movieId}, title: {title}, director: {director}, rentalPrice: {rentalPrice}";
+        }
+
+
+        public virtual string DisplayMovieInfo()
+        {
+            return ToString() ;
         }
     }
 
